@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Alunos
  */
-public class Tabuleiro implements Serializable{
+public class Tabuleiro{
 
     private char[][] tabuleiro, aux;
     private List<Navio> navios;

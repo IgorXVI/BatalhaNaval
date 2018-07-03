@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,7 +21,7 @@ import java.util.Scanner;
  *
  * @author Usuario
  */
-public class Jogo{
+public class Jogo implements Serializable{
 
     private Jogador jogador;
     private Bot bot;
@@ -132,7 +133,8 @@ public class Jogo{
         Scanner in = new Scanner(System.in);
         String s = in.next();
         try {
-            FileOutputStream f = new FileOutputStream(new File(s + ".ser"));
+            File file = new File(s+".ser"); 
+            FileOutputStream f = new FileOutputStream(file);
             ObjectOutputStream o = new ObjectOutputStream(f);
             o.writeObject(this);
             f.close();
@@ -203,7 +205,8 @@ public class Jogo{
         Scanner in = new Scanner(System.in);
         String s = in.next();
         try {
-            FileInputStream fi = new FileInputStream(new File(s + ".ser"));
+            File file = new File(s+".ser");
+            FileInputStream fi = new FileInputStream(file);
             ObjectInputStream oi = new ObjectInputStream(fi);
 
             Jogo save = (Jogo) oi.readObject();
