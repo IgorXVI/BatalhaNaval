@@ -133,7 +133,7 @@ public class Jogo implements Serializable{
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
         try {
-            File file = new File(s+".ser"); 
+            File file = new File(s+".ser");
             FileOutputStream f = new FileOutputStream(file);
             ObjectOutputStream o = new ObjectOutputStream(f);
             o.writeObject(this);
@@ -147,7 +147,7 @@ public class Jogo implements Serializable{
         }
     }
 
-    private void continuarJogo() {
+    public void continuarJogo() {
         System.out.println("Bem vindo de volta, Almirante " + this.jogador.getNome() + "!");
         System.out.println("Essas são as posições dos seus navios:");
         this.jogador.getTabuleiro().mostrarTabuleiroDoJogador();
@@ -159,7 +159,7 @@ public class Jogo implements Serializable{
         this.executarJogo();
     }
 
-    private void iniciarMenu() {
+    public void iniciarMenu() {
         System.out.println("Bem vindo ao menu do jogo Batalha Naval 9000!");
         System.out.println("Digite 'novo' para começar um novo jogo.");
         System.out.println("Digite 'load' para dar load em um save.");
@@ -215,7 +215,7 @@ public class Jogo implements Serializable{
             Jogo save = (Jogo) oi.readObject();
             oi.close();
             fi.close();
-  
+
             this.jogador = save.getJogador();
             this.bot = save.getBot();
             this.comecou = save.getComecou();
@@ -226,7 +226,7 @@ public class Jogo implements Serializable{
             this.receberInputDoMenu();
         }
     }
-    
+
     public Jogador getJogador() {
         return this.jogador;
     }
@@ -234,7 +234,7 @@ public class Jogo implements Serializable{
     public Bot getBot() {
         return this.bot;
     }
-    
+
     public boolean getComecou(){
         return this.comecou;
     }
