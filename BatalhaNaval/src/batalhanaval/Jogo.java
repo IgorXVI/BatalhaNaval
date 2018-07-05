@@ -36,7 +36,7 @@ public class Jogo implements Serializable{
         String s;
         Scanner in = new Scanner(System.in);
         System.out.print("Informe o seu nome: ");
-        s = in.next();
+        s = in.nextLine();
         this.jogador = new Jogador(s);
         this.bot = new Bot();
         System.out.println("Almirante " + this.jogador.getNome() + ", esse é o seu tabuleiro:");
@@ -131,7 +131,7 @@ public class Jogo implements Serializable{
     private void salvar() {
         System.out.print("Digite o nome do arquivo de save: ");
         Scanner in = new Scanner(System.in);
-        String s = in.next();
+        String s = in.nextLine();
         try {
             File file = new File(s+".ser"); 
             FileOutputStream f = new FileOutputStream(file);
@@ -139,8 +139,11 @@ public class Jogo implements Serializable{
             o.writeObject(this);
             f.close();
             o.close();
+            System.out.println("Jogo salvo com sucesso!");
+            this.receberInputDoMenu();
         } catch (Exception e) {
             System.out.println("Erro: Não foi possível salvar o jogo.");
+            this.receberInputDoMenu();
         }
     }
 
@@ -203,7 +206,7 @@ public class Jogo implements Serializable{
     private void loadSave() {
         System.out.print("Digite o nome do arquivo de save: ");
         Scanner in = new Scanner(System.in);
-        String s = in.next();
+        String s = in.nextLine();
         try {
             File file = new File(s+".ser");
             FileInputStream fi = new FileInputStream(file);
@@ -216,6 +219,7 @@ public class Jogo implements Serializable{
             this.jogador = save.getJogador();
             this.bot = save.getBot();
             this.comecou = save.getComecou();
+            System.out.println("Load realizado com sucesso!");
             this.continuarJogo();
         } catch (Exception e) {
             System.out.println("Erro: Não foi possível fazer load do save.");

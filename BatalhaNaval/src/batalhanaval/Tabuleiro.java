@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Alunos
  */
-public class Tabuleiro{
+public class Tabuleiro implements Serializable{
 
     private char[][] tabuleiro, aux;
     private List<Navio> navios;
@@ -69,7 +69,7 @@ public class Tabuleiro{
         }
         /*Aqui eu utilizo uma fórmula para ver se existe intersecção entre dois
         segmentos de reta.
-        source: http://www.cs.swan.ac.uk/~cssimon/line_intersection.html */
+        fonte: http://www.cs.swan.ac.uk/~cssimon/line_intersection.html */
 
         nt1 = (y3 - y4) * (x1 - x3) + (x4 - x3) * (y1 - y3);
         dt1 = (x4 - x3) * (y1 - y2) - (x1 - x2) * (y4 - y3);

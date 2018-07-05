@@ -5,11 +5,13 @@
  */
 package batalhanaval;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Alunos
  */
-public class Jogador {
+public class Jogador implements Serializable{
 
     private String nome;
     private Tabuleiro tabuleiro;

@@ -5,13 +5,14 @@
  */
 package batalhanaval;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  *
  * @author Alunos
  */
-public class Navio {
+public class Navio implements Serializable{
 
     private int tamanho;
     private int[] posInicial, posFinal;

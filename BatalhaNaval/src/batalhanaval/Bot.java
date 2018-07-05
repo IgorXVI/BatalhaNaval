@@ -5,13 +5,14 @@
  */
 package batalhanaval;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  *
  * @author Usuario
  */
-public class Bot extends Jogador{
+public class Bot extends Jogador implements Serializable{
     
     public Bot() {
         super("Bot");
