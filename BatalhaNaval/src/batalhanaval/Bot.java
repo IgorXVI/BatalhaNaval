@@ -15,7 +15,7 @@ import java.util.Random;
 public class Bot extends Jogador implements Serializable{
     
     public Bot() {
-        super("Bot");
+        super("Javaligor");
     }
 
     public void realizarJogada(Jogador adversario) {

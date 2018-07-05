@@ -147,7 +147,7 @@ public class Jogo implements Serializable{
         }
     }
 
-    public void continuarJogo() {
+    private void continuarJogo() {
         System.out.println("Bem vindo de volta, Almirante " + this.jogador.getNome() + "!");
         System.out.println("Essas são as posições dos seus navios:");
         this.jogador.getTabuleiro().mostrarTabuleiroDoJogador();
@@ -159,7 +159,7 @@ public class Jogo implements Serializable{
         this.executarJogo();
     }
 
-    public void iniciarMenu() {
+    private void iniciarMenu() {
         System.out.println("Bem vindo ao menu do jogo Batalha Naval 9000!");
         System.out.println("Digite 'novo' para começar um novo jogo.");
         System.out.println("Digite 'load' para dar load em um save.");
