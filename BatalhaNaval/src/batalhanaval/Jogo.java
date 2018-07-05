@@ -29,7 +29,6 @@ public class Jogo implements Serializable{
 
     Jogo() {
         this.comecou = false;
-        this.iniciarMenu();
     }
 
     private void iniciarJogo() {
@@ -147,7 +146,7 @@ public class Jogo implements Serializable{
         }
     }
 
-    public void continuarJogo() {
+    private void continuarJogo() {
         System.out.println("Bem vindo de volta, Almirante " + this.jogador.getNome() + "!");
         System.out.println("Essas são as posições dos seus navios:");
         this.jogador.getTabuleiro().mostrarTabuleiroDoJogador();
